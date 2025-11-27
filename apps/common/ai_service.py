@@ -4,7 +4,6 @@ from typing import Dict, List, Any
 from django.conf import settings
 import fitz  # PyMuPDF
 import requests
-from deepface import DeepFace
 import numpy as np
 import tempfile
 import subprocess
@@ -122,7 +121,7 @@ class AIService:
         return output.stdout.decode()
 
     def analyze_interview_video(self, video_file_path: str) -> Dict:
-
+        from deepface import DeepFace
         # Extract audio
         audio = tempfile.mktemp(suffix=".mp3")
         subprocess.call(["ffmpeg", "-i", video_file_path, "-q:a", "0", "-map", "a", audio])
