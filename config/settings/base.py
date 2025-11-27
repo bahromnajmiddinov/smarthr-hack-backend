@@ -173,3 +173,6 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
+
+GROQ_API_KEY=config('GROQ_API_KEY', default='your_groq_key_here')
+VOYAGE_API_KEY=config('VOYAGE_API_KEY', default='your_voyage_key_here')
